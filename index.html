@@ -16,7 +16,7 @@ body{
   background:#000;
   color:#fff;
 }
-@font-face {
+@font-face@font-face {
   font-family: 'Eagle';
   src: url('https://rahulshaik22.github.io/EagleHorizonP.ttf') format('truetype');
 }
@@ -34,7 +34,8 @@ nav{
 /* HERO */
 .hero{
   height:100vh;
-  background:url('rahul.png') no-repeat right center/cover;
+  background:url('rahul.png') no-repeat 65% center;
+  background-size:cover;
   display:flex;
   align-items:center;
   padding:0 8%;
@@ -43,10 +44,13 @@ nav{
 .overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to right,
-    rgba(0,0,0,0.95) 35%,
-    rgba(0,0,0,0.7) 60%,
-    transparent 100%);
+  background:linear-gradient(
+    to right,
+    rgba(0,0,0,0.85) 25%,
+    rgba(0,0,0,0.5) 50%,
+    rgba(0,0,0,0.2) 70%,
+    transparent 100%
+  );
 }
 .content{
   position:relative;
@@ -59,7 +63,7 @@ nav{
   white-space:nowrap;
 }
 .eagle{
-  font-family:'Eagle', cursive;
+  font-family:'Eagle' !important; /* 🔥 force it */
   font-size:80px;
   letter-spacing:2px;
   color:#22c55e;
