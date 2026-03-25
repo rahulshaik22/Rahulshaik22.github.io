@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Macondo&display=swap" rel="stylesheet">
     
     <style>
+        /* Global Reset & Base Font */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* Set Macondo as the default font for the entire site */
-            font-family: 'Macondo', cursive;
+            font-family: 'Macondo', cursive; /* All text defaults to Macondo */
         }
 
         body {
@@ -62,7 +62,7 @@
             max-width: 900px;
         }
 
-        /* Macondo Header Part */
+        /* Macondo Headline */
         .hero-title {
             font-size: 45px;
             font-weight: 400;
@@ -70,7 +70,7 @@
             letter-spacing: 1px;
         }
 
-        /* Lavishly Yours - Only for Rahul Shaik */
+        /* Lavishly Yours - EXCEPTION for the Name */
         .lavish-name {
             font-family: 'Lavishly Yours', cursive;
             color: #22c55e;
@@ -88,7 +88,7 @@
             max-width: 550px;
         }
 
-        /* BUTTONS (Macondo Font) */
+        /* BUTTONS (Inherits Macondo) */
         .buttons {
             display: flex;
             flex-direction: column;
@@ -105,7 +105,7 @@
             text-align: center;
             transition: 0.3s ease;
             width: 200px;
-            border: 1px solid transparent;
+            display: block;
         }
 
         .primary {
@@ -115,13 +115,11 @@
         }
 
         .primary:hover {
-            background: transparent;
-            border-color: #22c55e;
-            color: #22c55e;
-            transform: scale(1.02);
+            background: #16a34a;
+            transform: scale(1.05);
         }
 
-        /* About Section */
+        /* ABOUT SECTION (Uses Macondo) */
         section#about {
             padding: 100px 8%;
             background: #000;
@@ -131,9 +129,9 @@
             color: #22c55e; 
             margin-bottom: 20px; 
             font-size: 40px;
-            font-weight: 400;
         }
 
+        /* FOOTER (Uses Macondo) */
         footer {
             text-align: center;
             padding: 40px;
