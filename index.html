@@ -31,21 +31,23 @@
             background-color: #000; /* Ensures the rest of the page is black */
         }
 
-        /* THE FIX: Background Image pseudo-element */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Make sure 'rahul.png' is in the same folder as this file */
-            background: url('rahul.png') no-repeat;
-            background-size: cover;
-            background-position: center right; /* Moves the person to the right */
-            z-index: 1; /* Sits above the black background */
-        }
-
+ /* THE FIX: Background Image pseudo-element */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Double check: is it rahul.png or rahul.PNG? it MUST match exactly */
+    background-image: url('rahul.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* This ensures the subject of your photo stays visible */
+    background-position: center right; 
+    z-index: 1; 
+    display: block;
+}
         /* Overlay to make text readable */
         .overlay {
             position: absolute;
