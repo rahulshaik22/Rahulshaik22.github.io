@@ -3,20 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul | Cinematic Portfolio</title>
+<title>Rahul Portfolio</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
 body{
+  margin:0;
+  font-family:Arial;
   background:#000;
   color:white;
-  overflow-x:hidden;
 }
 
 /* HERO */
@@ -25,73 +19,46 @@ body{
   display:flex;
   align-items:center;
   padding-left:80px;
-  position:relative;
 
-  background:
-    linear-gradient(to right, #000 35%, rgba(0,0,0,0.7) 55%, transparent 75%),
-    url('rahul.png') right center / contain no-repeat;
-}
+  /* IMAGE + GRADIENT */
+  background-image: 
+    linear-gradient(to right, black 40%, transparent 70%),
+    url("rahul.png");
 
-/* BLUE GLOW EFFECT */
-.hero::after{
-  content:"";
-  position:absolute;
-  right:0;
-  top:0;
-  width:50%;
-  height:100%;
-  background: radial-gradient(circle, rgba(0,150,255,0.25), transparent 70%);
-  pointer-events:none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 /* TEXT */
 .text{
-  max-width:520px;
-  z-index:2;
+  max-width:500px;
 }
 
 .text h1{
-  font-size:3.5rem;
-  margin-bottom:15px;
+  font-size:3rem;
 }
 
 .text p{
   color:#aaa;
-  margin-bottom:30px;
-  line-height:1.5;
+  margin:20px 0;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn{
-  padding:14px 28px;
-  border-radius:6px;
-  text-decoration:none;
-  margin-right:12px;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.btn-outline{
-  border:1px solid #4CAF50;
-  color:#4CAF50;
-}
-
-.btn-fill{
+  padding:12px 20px;
   background:#4CAF50;
   color:white;
-}
-
-/* HOVER EFFECT */
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 15px rgba(76,175,80,0.6);
+  text-decoration:none;
+  margin-right:10px;
+  border-radius:5px;
 }
 
 /* SERVICES */
 .services{
-  padding:100px 20px;
+  padding:80px 20px;
   text-align:center;
-  background:#0b0f14;
+  background:#111;
 }
 
 .cards{
@@ -99,98 +66,47 @@ body{
   justify-content:center;
   gap:20px;
   flex-wrap:wrap;
-  margin-top:40px;
 }
 
 .card{
-  background:#111;
-  padding:30px;
-  width:260px;
-  border-radius:10px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  background:#1a1a1a;
+  padding:20px;
+  width:250px;
 }
 
 /* PROJECT */
 .project{
   text-align:center;
-  padding:80px;
-  background:#000;
-}
-
-.project a{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:#4CAF50;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero{
-    padding:40px;
-    background:
-      linear-gradient(to top, #000 40%, transparent 80%),
-      url('rahul.png') center top / cover no-repeat;
-  }
-
-  .text h1{
-    font-size:2rem;
-  }
+  padding:60px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <div class="text">
     <h1>Hi, I am Rahul</h1>
-    <p>I create modern websites and cinematic digital experiences.</p>
+    <p>I create modern websites and digital experiences.</p>
 
-    <a href="#services" class="btn btn-outline">Know More</a>
-    <a href="#projects" class="btn btn-fill">My Work</a>
+    <a href="#" class="btn">Know More</a>
+    <a href="#" class="btn">My Work</a>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<section class="services">
   <h2>Our Services</h2>
 
   <div class="cards">
-    <div class="card">
-      <h3>Development</h3>
-      <p>Modern and responsive websites</p>
-    </div>
-
-    <div class="card">
-      <h3>Design</h3>
-      <p>Clean UI/UX experience</p>
-    </div>
-
-    <div class="card">
-      <h3>SEO</h3>
-      <p>Fast and optimized websites</p>
-    </div>
+    <div class="card">Development</div>
+    <div class="card">Design</div>
+    <div class="card">SEO</div>
   </div>
 </section>
 
-<!-- PROJECT -->
-<section class="project" id="projects">
+<section class="project">
   <h2>My Project</h2>
-
-  <h3>Imperial Cars 🚗</h3>
-  <p>Luxury car showcase website</p>
-
-  <a href="imperial-cars.html">Open</a>
+  <a href="imperial-cars.html" class="btn">Open Imperial Cars 🚗</a>
 </section>
 
 </body>
