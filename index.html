@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahul Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        @font-face {
-            font-family: 'Eagle';
-            src: url('EagleHorizonP.ttf') format('truetype');
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Global plain text */
         }
 
         body {
@@ -35,17 +32,16 @@
             overflow: hidden;
         }
 
-        /* Background Image */
         .hero::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: url('rahul.png') no-repeat 80% center; 
-            background-size: cover;
+            background: url('rahul.png') no-repeat;
+            background-size: cover; 
+            background-position: 85% center; 
             z-index: 0;
         }
 
-        /* Dark Fade Overlay for Readability */
         .overlay {
             position: absolute;
             inset: 0;
@@ -63,43 +59,34 @@
             z-index: 2;
             max-width: 900px;
         }
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* 1. Ensure the filename matches exactly (case-sensitive on GitHub) */
-    background: url('rahul.png') no-repeat;
-    
-    /* 2. 'cover' makes sure the image fills the entire area */
-    background-size: cover; 
-    
-    /* 3. Adjust this percentage to move the person left/right 
-       (e.g., 80% moves the subject to the right side) */
-    background-position: 85% center; 
-    
-    z-index: 0;
-  }
 
-        /* The Eagle Font Style */
-        .eagle-font {
-            font-family: 'Eagle', cursive;
+        /* Plain Text Part */
+        .hero-title {
+            font-size: 50px;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        /* Lavish Font - Only for the Name */
+        .lavish-name {
+            font-family: 'Lavishly Yours', cursive;
             color: #22c55e;
-            font-size: 90px;
-            letter-spacing: 2px;
-            text-shadow: 
-                0 0 10px rgba(34, 197, 94, 0.8),
-                0 0 30px rgba(34, 197, 94, 0.4);
+            font-size: 110px; /* Script fonts need to be larger to match scale */
+            display: block; /* Puts name on a new line */
+            margin-top: 10px;
+            text-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+            letter-spacing: 1px;
         }
 
         .content p {
             font-size: 18px;
             color: #ccc;
-            margin-bottom: 30px;
+            margin: 20px 0 30px 0;
             max-width: 500px;
-            line-height: 1.4;
         }
 
-        /* BUTTONS STACKED AS PER IMAGE */
+        /* BUTTONS */
         .buttons {
             display: flex;
             flex-direction: column;
@@ -115,22 +102,21 @@
             font-size: 16px;
             text-align: center;
             transition: 0.3s ease;
-            width: 180px;
-            display: block;
+            width: 190px;
         }
 
         .primary {
             background: #22c55e;
             color: #fff;
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
         }
 
         .primary:hover {
             background: #16a34a;
-            transform: scale(1.05);
+            transform: translateY(-3px);
         }
 
-        /* About Section */
+        /* Section Styling */
         section#about {
             padding: 100px 8%;
             background: #000;
@@ -147,9 +133,9 @@
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero-title { font-size: 45px; }
-            .eagle-font { font-size: 50px; }
-            .hero::before { background-position: center; opacity: 0.6; }
+            .hero-title { font-size: 30px; }
+            .lavish-name { font-size: 70px; }
+            .hero::before { background-position: center; opacity: 0.5; }
         }
     </style>
 </head>
@@ -160,7 +146,8 @@
         
         <div class="content">
             <h1 class="hero-title">
-                Hi, I am <span class="eagle-font">Rahul Shaik</span>
+                Hi, I am <br>
+                <span class="lavish-name">Rahul Shaik</span>
             </h1>
             
             <p>I create modern websites and cinematic digital experiences.</p>
