@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Portfolio</title>
+<title>Rahul | Cinematic Portfolio</title>
 
 <style>
 *{
@@ -14,54 +14,84 @@
 }
 
 body{
-  background:#0c0c0c;
+  background:#000;
   color:white;
+  overflow-x:hidden;
 }
 
 /* HERO */
 .hero{
+  height:100vh;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:80px;
-  min-height:100vh;
+  padding-left:80px;
+  position:relative;
+
+  background:
+    linear-gradient(to right, #000 35%, rgba(0,0,0,0.7) 55%, transparent 75%),
+    url('rahul.png') right center / contain no-repeat;
 }
 
+/* BLUE GLOW EFFECT */
+.hero::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  width:50%;
+  height:100%;
+  background: radial-gradient(circle, rgba(0,150,255,0.25), transparent 70%);
+  pointer-events:none;
+}
+
+/* TEXT */
 .text{
-  max-width:500px;
+  max-width:520px;
+  z-index:2;
 }
 
 .text h1{
-  font-size:3rem;
+  font-size:3.5rem;
+  margin-bottom:15px;
 }
 
 .text p{
   color:#aaa;
-  margin:20px 0;
+  margin-bottom:30px;
   line-height:1.5;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn{
-  padding:12px 20px;
-  background:#4CAF50;
-  color:white;
+  padding:14px 28px;
+  border-radius:6px;
   text-decoration:none;
-  margin-right:10px;
-  border-radius:5px;
+  margin-right:12px;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-/* IMAGE */
-.hero img{
-  width:380px;
-  border-radius:10px;
+.btn-outline{
+  border:1px solid #4CAF50;
+  color:#4CAF50;
+}
+
+.btn-fill{
+  background:#4CAF50;
+  color:white;
+}
+
+/* HOVER EFFECT */
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 15px rgba(76,175,80,0.6);
 }
 
 /* SERVICES */
 .services{
-  padding:80px 20px;
+  padding:100px 20px;
   text-align:center;
-  background:#111;
+  background:#0b0f14;
 }
 
 .cards{
@@ -69,46 +99,50 @@ body{
   justify-content:center;
   gap:20px;
   flex-wrap:wrap;
+  margin-top:40px;
 }
 
 .card{
-  background:#1a1a1a;
-  padding:25px;
-  width:250px;
-  border-radius:8px;
+  background:#111;
+  padding:30px;
+  width:260px;
+  border-radius:10px;
   transition:0.3s;
 }
 
 .card:hover{
   transform:translateY(-10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* PROJECT */
 .project{
   text-align:center;
-  padding:60px;
+  padding:80px;
+  background:#000;
 }
 
 .project a{
   display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
+  margin-top:20px;
+  padding:12px 25px;
   background:#4CAF50;
   color:white;
   text-decoration:none;
-  border-radius:5px;
+  border-radius:6px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
   .hero{
-    flex-direction:column;
-    text-align:center;
+    padding:40px;
+    background:
+      linear-gradient(to top, #000 40%, transparent 80%),
+      url('rahul.png') center top / cover no-repeat;
   }
 
-  .hero img{
-    width:250px;
-    margin-top:30px;
+  .text h1{
+    font-size:2rem;
   }
 }
 </style>
@@ -118,18 +152,13 @@ body{
 
 <!-- HERO -->
 <section class="hero">
-
   <div class="text">
     <h1>Hi, I am Rahul</h1>
-    <p>I create modern websites and clean digital experiences.</p>
+    <p>I create modern websites and cinematic digital experiences.</p>
 
-    <a href="#services" class="btn">Know More</a>
-    <a href="#projects" class="btn">My Work</a>
+    <a href="#services" class="btn btn-outline">Know More</a>
+    <a href="#projects" class="btn btn-fill">My Work</a>
   </div>
-
-  <!-- YOUR IMAGE -->
-  <img src="rahul.png" alt="Rahul">
-
 </section>
 
 <!-- SERVICES -->
@@ -139,12 +168,12 @@ body{
   <div class="cards">
     <div class="card">
       <h3>Development</h3>
-      <p>Modern responsive websites</p>
+      <p>Modern and responsive websites</p>
     </div>
 
     <div class="card">
       <h3>Design</h3>
-      <p>Clean UI/UX design</p>
+      <p>Clean UI/UX experience</p>
     </div>
 
     <div class="card">
