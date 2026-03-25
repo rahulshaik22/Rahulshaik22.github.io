@@ -6,9 +6,14 @@
 <title>Rahul Portfolio</title>
 
 <style>
-body{
+*{
   margin:0;
-  font-family:Arial;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
   background:#0c0c0c;
   color:white;
 }
@@ -33,26 +38,29 @@ body{
 .text p{
   color:#aaa;
   margin:20px 0;
+  line-height:1.5;
 }
 
+/* BUTTON */
 .btn{
   padding:12px 20px;
   background:#4CAF50;
   color:white;
   text-decoration:none;
   margin-right:10px;
+  border-radius:5px;
 }
 
 /* IMAGE */
 .hero img{
-  width:350px;
+  width:380px;
   border-radius:10px;
 }
 
 /* SERVICES */
 .services{
-  text-align:center;
   padding:80px 20px;
+  text-align:center;
   background:#111;
 }
 
@@ -65,8 +73,14 @@ body{
 
 .card{
   background:#1a1a1a;
-  padding:20px;
+  padding:25px;
   width:250px;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
 }
 
 /* PROJECT */
@@ -74,39 +88,80 @@ body{
   text-align:center;
   padding:60px;
 }
+
+.project a{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#4CAF50;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero img{
+    width:250px;
+    margin-top:30px;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
 
-<div class="text">
-<h1>Hi, I am Rahul</h1>
-<p>I create modern websites and digital experiences.</p>
+  <div class="text">
+    <h1>Hi, I am Rahul</h1>
+    <p>I create modern websites and clean digital experiences.</p>
 
-<a href="#services" class="btn">Know More</a>
-<a href="#projects" class="btn">My Work</a>
-</div>
+    <a href="#services" class="btn">Know More</a>
+    <a href="#projects" class="btn">My Work</a>
+  </div>
 
-<img src="rahul.png">
+  <!-- YOUR IMAGE -->
+  <img src="rahul.png" alt="Rahul">
 
 </section>
 
+<!-- SERVICES -->
 <section class="services" id="services">
-<h2>Our Services</h2>
+  <h2>Our Services</h2>
 
-<div class="cards">
-<div class="card">Development</div>
-<div class="card">Design</div>
-<div class="card">SEO</div>
-</div>
+  <div class="cards">
+    <div class="card">
+      <h3>Development</h3>
+      <p>Modern responsive websites</p>
+    </div>
 
+    <div class="card">
+      <h3>Design</h3>
+      <p>Clean UI/UX design</p>
+    </div>
+
+    <div class="card">
+      <h3>SEO</h3>
+      <p>Fast and optimized websites</p>
+    </div>
+  </div>
 </section>
 
+<!-- PROJECT -->
 <section class="project" id="projects">
-<h2>My Project</h2>
-<a href="imperial-cars.html" class="btn">Open Imperial Cars 🚗</a>
+  <h2>My Project</h2>
+
+  <h3>Imperial Cars 🚗</h3>
+  <p>Luxury car showcase website</p>
+
+  <a href="imperial-cars.html">Open</a>
 </section>
 
 </body>
