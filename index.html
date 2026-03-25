@@ -21,7 +21,7 @@ body{
   color:#fff;
 }
 
-/* ✅ CORRECT FONT SETUP */
+/* ✅ CUSTOM FONT (GITHUB SAFE) */
 @font-face {
   font-family: 'Ramadan';
   src: url('https://rahulshaik22.github.io/arabic-ramadan.ttf') format('truetype');
@@ -69,20 +69,27 @@ nav h2{
   max-width:600px;
 }
 
-.content h1{
+/* ✅ FORCE SINGLE LINE */
+.hero-title{
   font-size:64px;
   margin-bottom:20px;
+  white-space:nowrap;
 }
 
-/* ✅ ARABIC FONT STYLE */
+/* ✅ ARABIC NAME STYLE */
 .ramadan{
   font-family:'Ramadan', cursive !important;
   font-size:72px;
-  letter-spacing:3px;
+  letter-spacing:2px;
+
+  /* PREMIUM GLOW */
   color:#22c55e;
-  text-shadow:0 0 10px #22c55e, 0 0 25px #22c55e;
+  text-shadow:
+    0 0 6px rgba(34,197,94,0.6),
+    0 0 12px rgba(34,197,94,0.3);
 }
 
+/* TEXT */
 .content p{
   color:#ccc;
   margin-bottom:20px;
@@ -173,11 +180,13 @@ footer{
   color:#666;
 }
 
-/* MOBILE */
+/* MOBILE FIX */
 @media(max-width:768px){
-  .content h1{
+  .hero-title{
     font-size:40px;
+    white-space:normal;
   }
+
   .ramadan{
     font-size:48px;
   }
@@ -196,11 +205,13 @@ footer{
   <div class="overlay"></div>
 
   <div class="content">
-    <h1>Hi, I am <span class="ramadan">Rahul&nbsp;Shaik</span></h1>
-    <p>I create modern websites and cinematic digital experiences.</p>
+    <h1 class="hero-title">
+      Hi, I am <span class="ramadan">Rahul Shaik</span>
+    </h1>
 
 ```
-<!-- ✅ CLEAN BUTTONS -->
+<p>I create modern websites and cinematic digital experiences.</p>
+
 <div class="buttons">
   <a href="#about" class="primary">Know More</a>
 
