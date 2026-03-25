@@ -21,6 +21,12 @@ body{
   color:#fff;
 }
 
+/* CUSTOM ARABIC FONT */
+@font-face {
+  font-family: 'Ramadan';
+  src: url('arabic-ramadan.ttf') format('truetype');
+}
+
 /* NAVBAR */
 nav{
   position:fixed;
@@ -68,9 +74,19 @@ nav h2{
   margin-bottom:20px;
 }
 
+/* ARABIC NAME STYLE */
+.ramadan{
+  font-family:'Ramadan';
+  font-size:72px;
+  letter-spacing:3px;
+  color:#22c55e;
+  text-shadow:0 0 10px #22c55e, 0 0 25px #22c55e;
+}
+
 .content p{
   color:#ccc;
-  margin-bottom:30px;
+  margin-bottom:20px;
+  line-height:1.6;
 }
 
 /* BUTTONS */
@@ -78,6 +94,7 @@ nav h2{
   display:flex;
   flex-direction:column;
   gap:15px;
+  align-items:flex-start;
 }
 
 /* KNOW MORE */
@@ -89,6 +106,7 @@ nav h2{
   text-decoration:none;
   font-weight:500;
   transition:0.3s;
+  box-shadow:0 0 10px rgba(34,197,94,0.3);
 }
 
 .primary:hover{
@@ -161,6 +179,9 @@ footer{
   .content h1{
     font-size:40px;
   }
+  .ramadan{
+    font-size:48px;
+  }
 }
 </style>
 
@@ -176,17 +197,16 @@ footer{
   <div class="overlay"></div>
 
   <div class="content">
-    <h1>Hi, I am Rahul</h1>
+    <h1>Hi, I am <span class="ramadan">Rahul Shaik</span></h1>
     <p>I create modern websites and cinematic digital experiences.</p>
 
 ```
 <div class="buttons">
   <a href="#about" class="primary">Know More</a>
 
-  <!-- 🔥 MY WORK BUTTON -->
-<a href="https://rahulshaik22.github.io/imperial-cars.html" target="_blank" class="premium">
-  My Work 🚗
-</a>
+  <a href="https://rahulshaik22.github.io/imperial-cars.html" target="_blank" class="premium">
+    My Work 🚗
+  </a>
 </div>
 ```
 
