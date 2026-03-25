@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Cars — The Art of Extraordinary Motoring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:#0c0b09;
+  color:#e8e0cc;
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  min-height:100vh;
+}
+
+/* TOP BAR */
+.topbar{
+  background:#080706;
+  border-bottom:1px solid #1a1810;
+  padding:8px 2.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#4a4030;
+  text-transform:uppercase;
+}
+.topbar span{color:#b8974a;}
+
+/* HERO */
+.hero{
+  background:#0c0b09;
+  border-bottom:1px solid #2a2418;
+  padding:3rem 2.5rem 2.2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.5rem;
+  position:relative;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#b8974a,#e8c96e,#b8974a,transparent);
+}
+.crown-svg{width:50px;height:28px;margin-bottom:6px;}
+.wordmark{
+  font-family:'Cinzel',serif;
+  font-size:38px;
+  font-weight:600;
+  letter-spacing:10px;
+  color:#e8c96e;
+  text-transform:uppercase;
+}
+.wordmark-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  letter-spacing:5px;
+  color:#6a5a3a;
+  text-transform:uppercase;
+}
+.gold-rule{
+  width:140px;height:1px;
+  background:linear-gradient(90deg,transparent,#b8974a,transparent);
+  margin:0.6rem auto 0;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:0;
+  background:#0a0908;
+  border-bottom:1px solid #1e1c16;
+  padding:0 2rem;
+  flex-wrap:wrap;
+}
+.nav a{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#4a4030;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 22px;
+  border-bottom:2px solid transparent;
+  transition:all 0.25s;
+}
+.nav a:hover{color:#b8974a;border-bottom-color:#b8974a;}
+
+/* CONTROLS */
+.controls{
+  padding:1.4rem 2rem;
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  flex-wrap:wrap;
+  background:#0e0d0b;
+  border-bottom:1px solid #1e1c16;
+}
+.search-wrap{flex:1;min-width:200px;}
+.search-wrap input{
+  width:100%;
+  background:#13120e;
+  border:1px solid #2a2418;
+  color:#e8e0cc;
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:13px;
+  letter-spacing:1px;
+  padding:10px 16px;
+  outline:none;
+  transition:border-color 0.3s;
+}
+.search-wrap input::placeholder{color:#2a2418;letter-spacing:2px;}
+.search-wrap input:focus{border-color:#b8974a;}
+
+.fbtn{
+  background:transparent;
+  border:1px solid #2a2418;
+  color:#4a4030;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:10px 18px;
+  cursor:pointer;
+  transition:all 0.25s;
+  white-space:nowrap;
+}
+.fbtn:hover{border-color:#b8974a;color:#b8974a;}
+.fbtn.active{background:#b8974a;border-color:#b8974a;color:#0c0b09;}
+
+.count{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  color:#3a3226;
+  margin-left:auto;
+  white-space:nowrap;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:1px;
+  background:#161410;
+  padding:1px;
+}
+
+.card{
+  background:#0e0d0b;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.3s;
+}
+.card:hover{transform:scale(1.015);z-index:2;box-shadow:0 20px 60px rgba(184,151,74,0.08);}
+
+.img-wrap{
+  height:210px;overflow:hidden;position:relative;background:#0a0908;
+}
+.img-wrap img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:brightness(0.88) contrast(1.05) saturate(0.95);
+  transition:transform 0.5s ease, filter 0.3s;
+}
+.card:hover .img-wrap img{transform:scale(1.07);filter:brightness(1) contrast(1.05) saturate(1);}
+
+.badge{
+  position:absolute;top:14px;right:14px;
+  background:rgba(12,11,9,0.85);
+  border:1px solid #b8974a;
+  color:#e8c96e;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:5px 12px;
+}
+
+.card-body{
+  padding:1.5rem 1.5rem 1.3rem;
+  border-top:1px solid #1e1c16;
+  position:relative;
+}
+.card-body::before{
+  content:'';
+  position:absolute;top:0;left:1.5rem;
+  width:40px;height:2px;background:#b8974a;
+}
+
+.car-brand{
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;
+  color:#b8974a;text-transform:uppercase;margin-bottom:6px;
+}
+.car-model{
+  font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;
+  color:#e8e0cc;line-height:1.1;margin-bottom:8px;
+}
+.car-desc{
+  font-size:12px;color:#3a3226;line-height:1.75;letter-spacing:0.3px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  margin-bottom:1rem;
+}
+.card-footer{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  border-top:1px solid #1e1c16;padding-top:1rem;
+}
+.price-label{
+  font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;
+  color:#3a3226;text-transform:uppercase;margin-bottom:3px;
+}
+.price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#e8c96e;}
+.price small{font-size:13px;color:#b8974a;}
+
+.detail-btn{
+  background:transparent;border:1px solid #2a2418;
+  color:#4a4030;font-family:'Cinzel',serif;font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;padding:9px 16px;
+  cursor:pointer;transition:all 0.25s;
+}
+.detail-btn:hover{border-color:#b8974a;color:#e8c96e;}
+
+/* MODAL */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(6,5,4,0.96);z-index:500;
+  align-items:center;justify-content:center;padding:1rem;
+}
+.overlay.open{display:flex;}
+
+.modal{
+  background:#0e0d0b;border:1px solid #2a2418;
+  max-width:700px;width:100%;max-height:92vh;overflow-y:auto;
+  position:relative;animation:fadeUp 0.3s ease;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+.modal::before{
+  content:'';display:block;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,#b8974a,#e8c96e,#b8974a,transparent);
+}
+.modal img{width:100%;height:300px;object-fit:cover;display:block;filter:brightness(0.9) saturate(0.95);}
+
+.modal-body{padding:2.2rem;}
+.m-brand{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:#b8974a;text-transform:uppercase;margin-bottom:8px;}
+.m-model{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:#e8e0cc;line-height:1;margin-bottom:18px;}
+.m-rule{width:60px;height:1px;background:#b8974a;margin-bottom:18px;}
+.m-desc{font-size:13px;color:#5a4e36;line-height:1.85;letter-spacing:0.3px;margin-bottom:2rem;}
+
+.m-footer{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  border-top:1px solid #1e1c16;padding-top:1.8rem;
+}
+.m-price-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:#3a3226;text-transform:uppercase;margin-bottom:4px;}
+.m-price{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:#e8c96e;}
+.m-price small{font-size:15px;color:#b8974a;}
+
+.enquire-btn{
+  background:#b8974a;border:none;color:#0c0b09;
+  font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;padding:15px 30px;cursor:pointer;transition:background 0.25s;
+}
+.enquire-btn:hover{background:#e8c96e;}
+
+.close-btn{
+  position:absolute;top:18px;right:18px;
+  background:rgba(12,11,9,0.7);border:1px solid #2a2418;
+  color:#4a4030;width:34px;height:34px;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all 0.2s;z-index:10;
+}
+.close-btn:hover{border-color:#b8974a;color:#e8c96e;}
+
+/* CONTACT SECTION */
+.contact{
+  background:#0a0908;
+  border-top:1px solid #1e1c16;
+  padding:3.5rem 2.5rem;
+  text-align:center;
+}
+.contact-title{
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;
+  color:#b8974a;text-transform:uppercase;margin-bottom:8px;
+}
+.contact-heading{
+  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;
+  color:#e8e0cc;margin-bottom:0.5rem;
+}
+.contact-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#4a4030;margin-bottom:2rem;}
+.contact-grid{
+  display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:1rem;
+}
+.contact-item{text-align:center;}
+.contact-item .ci-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:#4a4030;text-transform:uppercase;margin-bottom:6px;}
+.contact-item .ci-value{font-family:'Cormorant Garamond',serif;font-size:17px;color:#e8c96e;}
+
+/* FOOTER */
+.footer{
+  padding:2rem 2.5rem;text-align:center;
+  border-top:1px solid #1a1810;background:#080706;
+}
+.footer .gold-rule{margin-bottom:1rem;}
+.footer p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:#2a2418;letter-spacing:2px;}
+
+.empty{
+  grid-column:1/-1;padding:5rem;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#2a2418;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>Imperial Cars</span>
+  <span>By Appointment Only &nbsp;·&nbsp; Est. 2024</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="crown-svg" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 38 L4 28 L18 10 L36 22 L54 10 L68 28 L68 38 Z" fill="none" stroke="#b8974a" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="4" cy="28" r="3" fill="#b8974a"/>
+    <circle cx="36" cy="6" r="3.5" fill="#e8c96e"/>
+    <circle cx="68" cy="28" r="3" fill="#b8974a"/>
+    <line x1="4" y1="38" x2="68" y2="38" stroke="#b8974a" stroke-width="1"/>
+  </svg>
+  <div class="wordmark">Imperial Cars</div>
+  <div class="wordmark-sub">The art of extraordinary motoring</div>
+  <div class="gold-rule"></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#">Collection</a>
+  <a href="#">New Arrivals</a>
+  <a href="#">Bespoke</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search by marque or model..." oninput="render()">
+  </div>
+  <button class="fbtn active" onclick="setFilter('all',this)">All</button>
+  <button class="fbtn" onclick="setFilter('grand-tourer',this)">Grand Tourer</button>
+  <button class="fbtn" onclick="setFilter('saloon',this)">Saloon</button>
+  <button class="fbtn" onclick="setFilter('suv',this)">SUV</button>
+  <button class="fbtn" onclick="setFilter('supercar',this)">Supercar</button>
+  <span class="count" id="count-label"></span>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="grid"></div>
+
+<!-- CONTACT -->
+<div class="contact">
+  <div class="contact-title">Get in Touch</div>
+  <div class="contact-heading">Visit Our Showroom</div>
+  <div class="contact-sub">Our specialists are available to guide your acquisition</div>
+  <div class="gold-rule" style="margin:0 auto 2rem;"></div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="ci-label">Phone</div>
+      <div class="ci-value">+91 98765 43210</div>
+    </div>
+    <div class="contact-item">
+      <div class="ci-label">Email</div>
+      <div class="ci-value">enquiries@imperialcars.in</div>
+    </div>
+    <div class="contact-item">
+      <div class="ci-label">Location</div>
+      <div class="ci-value">Hyderabad, India</div>
+    </div>
+    <div class="contact-item">
+      <div class="ci-label">Hours</div>
+      <div class="ci-value">Mon – Sat, 10am – 7pm</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="gold-rule"></div>
+  <p>Imperial Cars &nbsp;·&nbsp; Purveyors of Exceptional Automobiles &nbsp;·&nbsp; Hyderabad</p>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <button class="close-btn" onclick="closeModalDirect()">&#215;</button>
+    <img id="m-img" src="" alt="">
+    <div class="modal-body">
+      <div class="m-brand" id="m-brand"></div>
+      <div class="m-model" id="m-model"></div>
+      <div class="m-rule"></div>
+      <div class="m-desc" id="m-desc"></div>
+      <div class="m-footer">
+        <div>
+          <div class="m-price-label">Starting Price</div>
+          <div class="m-price"><small>₹ </small><span id="m-price"></span></div>
+        </div>
+        <button class="enquire-btn" id="enq-btn">Enquire Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const cars = [
+  {id:1,brand:'Rolls-Royce',model:'Phantom Series II',type:'saloon',price:'9,50,00,000',badge:'Bespoke',desc:'The absolute pinnacle of motoring. Hand-crafted over 450 hours, the Phantom redefines opulence with its starlight headliner, Gallery dashboard, and whisper-smooth 6.75-litre V12. No other car on earth makes time stand still quite like this.',img:'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=700&q=80'},
+  {id:2,brand:'Bentley',model:'Continental GT Speed',type:'grand-tourer',price:'3,90,00,000',badge:'New Arrival',desc:'6.0-litre W12, 659 bhp, 0–100 in 3.5 seconds — and yet never anything less than utterly refined. The Continental GT Speed is the definitive grand tourer: a chariot for the discerning road warrior.',img:'https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=700&q=80'},
+  {id:3,brand:'Ferrari',model:'SF90 Stradale',type:'supercar',price:'7,60,00,000',badge:'Exclusive',desc:'Ferrari\'s most powerful road car ever built. A 4.0-litre twin-turbo V8 paired with three electric motors delivers 1,000 bhp and 0–100 in a staggering 2.5 seconds. This is the prancing horse at its most extraordinary.',img:'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=700&q=80'},
+  {id:4,brand:'Lamborghini',model:'Revuelto',type:'supercar',price:'8,00,00,000',badge:'Limited',desc:'The successor to the legendary Aventador. A 6.5-litre naturally aspirated V12 hybrid producing 1,001 bhp, with a primal wail that no EV could ever replicate. Magnificence, weaponised.',img:'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=700&q=80'},
+  {id:5,brand:'Aston Martin',model:'DB12',type:'grand-tourer',price:'3,25,00,000',badge:'In Stock',desc:'Aston Martin calls it the world\'s first Super Tourer. A 671 bhp twin-turbo V8, breathtaking hand-stitched interior, and a silhouette drawn by angels. The DB12 is a love letter to the open road.',img:'https://images.unsplash.com/photo-1617814076668-bf975ad99e55?w=700&q=80'},
+  {id:6,brand:'Mercedes-Maybach',model:'S 680',type:'saloon',price:'2,75,00,000',badge:'In Stock',desc:'The S-Class taken to celestial heights. The Maybach S 680 cocoons its occupants in Nappa leather, rear-seat massage chairs, and a Burmester 4D sound system — all powered by a 6.0-litre V12 of serene, unhurried power.',img:'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=700&q=80'},
+  {id:7,brand:'Rolls-Royce',model:'Cullinan Black Badge',type:'suv',price:'11,20,00,000',badge:'Bespoke',desc:'The world\'s most luxurious SUV, elevated further. Black Badge transforms the Cullinan into a darker, more assertive beast — with 600 bhp and a cabin that puts five-star hotels to shame.',img:'https://images.unsplash.com/photo-1563720223185-11003d516935?w=700&q=80'},
+  {id:8,brand:'Bentley',model:'Bentayga EWB',type:'suv',price:'5,10,00,000',badge:'New Arrival',desc:'The Extended Wheelbase Bentayga is the finest chauffeur SUV ever made. An extra 180mm of rear legroom, optional airline-style seats and champagne cooler — crafted in Crewe with obsessive care.',img:'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=700&q=80'},
+  {id:9,brand:'Aston Martin',model:'Vantage F1 Edition',type:'supercar',price:'3,60,00,000',badge:'Limited',desc:'Born from Aston Martin\'s role as Official Safety Car of Formula 1. Track-tuned suspension, aggressive aero, and a 528 bhp AMG-sourced V8 that snarls at every downshift. For those who race the sun.',img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&q=80'},
+];
+
+let activeFilter='all', currentCar=null;
+
+function setFilter(type,btn){
+  activeFilter=type;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function render(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const filtered=cars.filter(c=>{
+    const mf=activeFilter==='all'||c.type===activeFilter;
+    const ms=(c.brand+' '+c.model).toLowerCase().includes(q);
+    return mf&&ms;
+  });
+  const grid=document.getElementById('grid');
+  document.getElementById('count-label').textContent=filtered.length+' vehicles available';
+  if(!filtered.length){grid.innerHTML='<div class="empty">No vehicles found for your selection</div>';return;}
+  grid.innerHTML=filtered.map(c=>`
+    <div class="card" onclick="openModal(${c.id})">
+      <div class="img-wrap">
+        <img src="${c.img}" alt="${c.brand} ${c.model}" loading="lazy">
+        <div class="badge">${c.badge}</div>
+      </div>
+      <div class="card-body">
+        <div class="car-brand">${c.brand}</div>
+        <div class="car-model">${c.model}</div>
+        <div class="car-desc">${c.desc}</div>
+        <div class="card-footer">
+          <div>
+            <div class="price-label">Starting Price</div>
+            <div class="price"><small>₹ </small>${c.price}</div>
+          </div>
+          <button class="detail-btn">View Details</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function openModal(id){
+  currentCar=cars.find(c=>c.id===id);
+  document.getElementById('m-img').src=currentCar.img;
+  document.getElementById('m-brand').textContent=currentCar.brand;
+  document.getElementById('m-model').textContent=currentCar.model;
+  document.getElementById('m-desc').textContent=currentCar.desc;
+  document.getElementById('m-price').textContent=currentCar.price;
+  document.getElementById('enq-btn').onclick=()=>{
+    window.location.href='mailto:enquiries@imperialcars.in?subject=Enquiry: '+currentCar.brand+' '+currentCar.model;
+  };
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeModal(e){if(e.target===document.getElementById('overlay'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('overlay').classList.remove('open');}
+
+render();
+</script>
+</body>
+</html>
