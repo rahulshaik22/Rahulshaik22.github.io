@@ -34,32 +34,32 @@
             overflow: hidden;
         }
 
-        /* The Background Image Layer */
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0; /* Fills the entire screen */
-            background-image: url('rahul.png'); /* Ensure this is exactly rahul.png on GitHub */
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center right; 
-            z-index: 1; /* Lowest layer */
-            animation: fadeInImg 1.5s ease-in-out;
-        }
+      /* THE FIX: Changed position to 'top right' so your face is visible */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background-image: url('rahul.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* 'top right' or '20% right' usually centers the face in the frame */
+    background-position: top right; 
+    z-index: 1; 
+    display: block;
+}
 
-        /* The Dark Fade Overlay */
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to right,
-                rgba(0,0,0,0.85) 20%, 
-                rgba(0,0,0,0.3) 60%,
-                transparent 100%
-            );
-            z-index: 2; /* Sits on top of the image */
-        }
-
+/* THE FIX: Lightened the gradient so it doesn't "black out" your face */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.8) 0%,   /* Dark behind the text */
+        rgba(0,0,0,0.2) 50%,  /* Much lighter in the middle */
+        transparent 100%      /* Clear over your face */
+    );
+    z-index: 2;
+}
         /* The Text Content Layer */
         .content {
             position: relative;
