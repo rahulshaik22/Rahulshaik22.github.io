@@ -3,18 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul | Portfolio</title>
+<title>Rahul Portfolio</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
-}
-
 body{
-  background:#0b0f14;
+  margin:0;
+  font-family:Arial;
+  background:#0c0c0c;
   color:white;
 }
 
@@ -23,178 +18,95 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  min-height:100vh;
   padding:80px;
-  background:linear-gradient(to right,#0b0f14,#111);
+  min-height:100vh;
 }
 
-.hero-text{
+.text{
   max-width:500px;
 }
 
-.hero h1{
+.text h1{
   font-size:3rem;
 }
 
-.hero p{
-  margin:20px 0;
+.text p{
   color:#aaa;
-  line-height:1.5;
+  margin:20px 0;
 }
 
-/* BUTTONS */
 .btn{
   padding:12px 20px;
-  margin-right:10px;
-  border-radius:4px;
-  text-decoration:none;
-  display:inline-block;
-}
-
-.btn-outline{
-  border:1px solid #4CAF50;
-  color:#4CAF50;
-}
-
-.btn-fill{
   background:#4CAF50;
   color:white;
+  text-decoration:none;
+  margin-right:10px;
 }
 
 /* IMAGE */
 .hero img{
-  width:380px;
+  width:350px;
   border-radius:10px;
 }
 
 /* SERVICES */
 .services{
-  padding:80px 20px;
   text-align:center;
+  padding:80px 20px;
   background:#111;
-}
-
-.services h2{
-  margin-bottom:40px;
 }
 
 .cards{
   display:flex;
-  gap:20px;
   justify-content:center;
+  gap:20px;
   flex-wrap:wrap;
 }
 
 .card{
   background:#1a1a1a;
-  padding:25px;
-  width:260px;
-  border-radius:8px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-}
-
-.card h3{
-  margin-bottom:10px;
+  padding:20px;
+  width:250px;
 }
 
 /* PROJECT */
 .project{
-  padding:80px;
   text-align:center;
-}
-
-.project-box{
-  display:inline-block;
-  padding:25px;
-  background:#111;
-  border-radius:10px;
-}
-
-.project a{
-  margin-top:15px;
-  display:inline-block;
-  padding:10px 20px;
-  background:#4CAF50;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero img{
-    width:250px;
-    margin-top:30px;
-  }
+  padding:60px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 
-  <div class="hero-text">
-    <h1>Hi, I am Rahul</h1>
-    <p>
-      I create modern websites and clean digital experiences.
-      Focused on design, performance and user experience.
-    </p>
+<div class="text">
+<h1>Hi, I am Rahul</h1>
+<p>I create modern websites and digital experiences.</p>
 
-    <a href="#services" class="btn btn-outline">Know More</a>
-    <a href="#projects" class="btn btn-fill">My Work</a>
-  </div>
+<a href="#services" class="btn">Know More</a>
+<a href="#projects" class="btn">My Work</a>
+</div>
 
-  <!-- YOUR IMAGE -->
-  <img src="rahul.png" alt="Rahul">
+<img src="rahul.png">
 
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="services">
-  <h2>Our Services</h2>
+<h2>Our Services</h2>
 
-  <div class="cards">
+<div class="cards">
+<div class="card">Development</div>
+<div class="card">Design</div>
+<div class="card">SEO</div>
+</div>
 
-    <div class="card">
-      <h3>Development</h3>
-      <p>Modern and responsive websites.</p>
-    </div>
-
-    <div class="card">
-      <h3>Design</h3>
-      <p>Clean UI and user experience.</p>
-    </div>
-
-    <div class="card">
-      <h3>SEO</h3>
-      <p>Optimized and fast websites.</p>
-    </div>
-
-  </div>
 </section>
 
-<!-- PROJECT -->
 <section class="project" id="projects">
-  <h2>My Project</h2>
-
-  <div class="project-box">
-    <h3>Imperial Cars 🚗</h3>
-    <p>Luxury car showcase website</p>
-    <br>
-    <a href="imperial-cars.html">Open</a>
-  </div>
-
+<h2>My Project</h2>
+<a href="imperial-cars.html" class="btn">Open Imperial Cars 🚗</a>
 </section>
 
 </body>
