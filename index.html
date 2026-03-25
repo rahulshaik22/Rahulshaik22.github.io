@@ -25,20 +25,20 @@ body{
     linear-gradient(to right, #000 45%, rgba(0,0,0,0.7) 60%, transparent 80%),
     url("rahul.png");
 
-  background-size: cover;
+  background-size: contain;   /* ✅ FIXED */
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-/* BLEND FIX */
+/* BLEND */
 .hero::after{
   content:"";
   position:absolute;
   right:0;
   top:0;
-  width:40%;
+  width:50%;
   height:100%;
-  background:linear-gradient(to left, rgba(0,0,0,0.9), transparent);
+  background:linear-gradient(to left, rgba(0,0,0,0.95), transparent);
 }
 
 /* TEXT */
